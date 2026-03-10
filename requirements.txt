@@ -1,0 +1,7 @@
+gradio
+langchain
+langchain-google-genai
+faiss-cpu
+pypdf
+python-multipart
+google-generativeai
