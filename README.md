@@ -7,13 +7,16 @@ close that gap.
 Select your university curriculum and target role, and BridgeAI gives you an honest, 
 no-fluff analysis of where you stand — what you already know, what you're missing, 
 and exactly what to do about it in the next 90 days.
-<img width="1920" height="1080" alt="demo1" src="https://github.com/user-attachments/assets/dd6a4e22-f0c1-4b2f-86dd-a7490faf9e0b" />
 
 ## Demo
-![BridgeAI Demo 1](<img width="1920" height="1080" alt="demo1" src="https://github.com/user-attachments/assets/b1fd082b-915d-4eaa-a159-66cec841861e" /> )
-![BridgeAI Demo 2](<img width="1920" height="1080" alt="demo2" src="https://github.com/user-attachments/assets/b777b7d8-0684-493d-8a5c-c9a2ea2dd478" /> )
-![BridgeAI Demo 3]( <img width="1920" height="1080" alt="demo3" src="https://github.com/user-attachments/assets/7f79a366-f643-4405-aa4e-c12d12a7dc63" />)
-![BridgeAI Demo 4](<img width="1920" height="1080" alt="demo4" src="https://github.com/user-attachments/assets/a1102a07-0df1-4534-bfd8-e54836feba74" /> )
+![BridgeAI Demo 1](<img width="1919" height="869" alt="demo1" src="https://github.com/user-attachments/assets/2dafa207-a8ff-4bc9-8192-7da5f12b1530" />
+)
+![BridgeAI Demo 2](<img width="1915" height="871" alt="demo2" src="https://github.com/user-attachments/assets/89f94c8f-9a45-4e3a-867e-a33152b1fe77" />
+)
+![BridgeAI Demo 3](<img width="1919" height="867" alt="demo3" src="https://github.com/user-attachments/assets/a8674673-ed99-40ab-ad86-26cfbae9fcf2" />
+)
+![BridgeAI Demo 4](<img width="1919" height="875" alt="demo4" src="https://github.com/user-attachments/assets/22ef8638-e010-4541-813b-e083f1bfa3fd" />
+)
 
 ## What It Does
 - Compares your academic curriculum against real industry job requirements
