@@ -9,15 +9,11 @@ no-fluff analysis of where you stand — what you already know, what you're miss
 and exactly what to do about it in the next 90 days.
 
 ## Demo
-![BridgeAI Demo 1](<img width="1919" height="869" alt="demo1" src="https://github.com/user-attachments/assets/2dafa207-a8ff-4bc9-8192-7da5f12b1530" />
-)
-![BridgeAI Demo 2](<img width="1915" height="871" alt="demo2" src="https://github.com/user-attachments/assets/89f94c8f-9a45-4e3a-867e-a33152b1fe77" />
-)
-![BridgeAI Demo 3](<img width="1919" height="867" alt="demo3" src="https://github.com/user-attachments/assets/a8674673-ed99-40ab-ad86-26cfbae9fcf2" />
-)
-![BridgeAI Demo 4](<img width="1919" height="875" alt="demo4" src="https://github.com/user-attachments/assets/22ef8638-e010-4541-813b-e083f1bfa3fd" />
-)
-
+## Demo
+![BridgeAI Demo 1](https://raw.githubusercontent.com/rithikahaha/BridgeAI/main/screenshots/demo1.png)
+![BridgeAI Demo 2](https://raw.githubusercontent.com/rithikahaha/BridgeAI/main/screenshots/demo2.png)
+![BridgeAI Demo 3](https://raw.githubusercontent.com/rithikahaha/BridgeAI/main/screenshots/demo3.png)
+![BridgeAI Demo 4](https://raw.githubusercontent.com/rithikahaha/BridgeAI/main/screenshots/demo4.png)
 ## What It Does
 - Compares your academic curriculum against real industry job requirements
 - Identifies critical skill gaps with priority levels (Critical, Important, Recommended)
