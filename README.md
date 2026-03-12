@@ -43,4 +43,4 @@ Rithika Harikrishna
 [LinkedIn](https://linkedin.com/in/rithika-harikrishna) · [GitHub](https://github.com/rithikahaha)
 
 ## Live Demo
-https://huggingface.co/spaces/rithikaaa/bridgeai-demo
+https://huggingface.co/spaces/rrithikaaa/bridgeai-demo
