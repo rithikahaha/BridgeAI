@@ -8,6 +8,9 @@ Select your university curriculum and target role, and BridgeAI gives you an hon
 no-fluff analysis of where you stand — what you already know, what you're missing, 
 and exactly what to do about it in the next 90 days.
 
+## Live Demo
+https://huggingface.co/spaces/rrithikaaa/bridgeai-demo
+
 ## Demo
 ![BridgeAI Demo 1](https://raw.githubusercontent.com/rithikahaha/BridgeAI/main/demo.png)
 
@@ -41,6 +44,3 @@ to give every student a clear, honest roadmap from academia to industry.
 ## Author
 Rithika Harikrishna  
 [LinkedIn](https://linkedin.com/in/rithika-harikrishna) · [GitHub](https://github.com/rithikahaha)
-
-## Live Demo
-https://huggingface.co/spaces/rrithikaaa/bridgeai-demo
