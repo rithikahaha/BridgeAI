@@ -41,3 +41,6 @@ to give every student a clear, honest roadmap from academia to industry.
 ## Author
 Rithika Harikrishna  
 [LinkedIn](https://linkedin.com/in/rithika-harikrishna) · [GitHub](https://github.com/rithikahaha)
+
+## Live Demo
+https://huggingface.co/spaces/rithikaaa/bridgeai-demo
