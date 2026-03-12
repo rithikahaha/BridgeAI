@@ -9,7 +9,7 @@ no-fluff analysis of where you stand — what you already know, what you're miss
 and exactly what to do about it in the next 90 days.
 
 ## Demo
-![BridgeAI Demo 1](https://raw.githubusercontent.com/rithikahaha/BridgeAI/main/demo1.png)
+![BridgeAI Demo 1](https://raw.githubusercontent.com/rithikahaha/BridgeAI/main/demo.png)
 
 ## What It Does
 - Compares your academic curriculum against real industry job requirements
