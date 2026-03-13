@@ -74,18 +74,17 @@ Model deployment APIs
 model = genai.GenerativeModel("gemini-2.0-flash")
 
 st.set_page_config(page_title="BridgeAI", page_icon="🎓")
-st.title("🎓 BridgeAI — Academic to Industry Skill Gap Analyzer")
+st.title(" BridgeAI — Academic to Industry Skill Gap Analyzer")
 st.write("Select your university curriculum and target role to generate an AI-powered skill gap analysis report.")
 
 curriculum_choice = st.selectbox("University Curriculum", list(CURRICULUMS.keys()))
 role_choice = st.selectbox("Target Role", list(ROLES.keys()))
 
 if st.button("Generate Report"):
-    with st.spinner("Analyzing skill gap..."):
-        curriculum = CURRICULUMS[curriculum_choice]
-        role = ROLES[role_choice]
+    curriculum = CURRICULUMS[curriculum_choice]
+    role = ROLES[role_choice]
 
-        prompt = f"""
+    prompt = f"""
 You are an AI career advisor.
 Compare the following university curriculum with industry job requirements.
 
@@ -103,8 +102,12 @@ Generate a professional skill gap report including:
 5. 90-day improvement roadmap
 6. Suggested portfolio projects
 """
-        try:
-            response = model.generate_content(prompt)
-            st.markdown(response.text)
-        except Exception as e:
-            st.error(f"Error generating report: {str(e)}")
+    try:
+        response = model.generate_content(prompt, stream=True)
+        output = st.empty()
+        full_text = ""
+        for chunk in response:
+            full_text += chunk.text
+            output.markdown(full_text)
+    except Exception as e:
+        st.error(f"Error generating report: {str(e)}")
