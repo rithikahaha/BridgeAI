@@ -1,14 +1,9 @@
-# ============================================================
-# BridgeAI — Academic to Industry Skill Gap Analyzer
-# ============================================================
 import os
 import streamlit as st
 import google.generativeai as genai
 
-# Configure Gemini API
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-# ================= CURRICULUM DATA =================
 CURRICULUMS = {
     "CSE - KTU (Kerala)": """
 Programming: C, C++, Java, Python
@@ -46,7 +41,6 @@ Machine Learning basics
 """
 }
 
-# ================= INDUSTRY ROLE REQUIREMENTS =================
 ROLES = {
     "Data Analyst": """
 Advanced SQL
@@ -77,10 +71,8 @@ Model deployment APIs
 """
 }
 
-# ================= GEMINI MODEL =================
 model = genai.GenerativeModel("gemini-2.0-flash")
 
-# ================= STREAMLIT UI =================
 st.set_page_config(page_title="BridgeAI", page_icon="🎓")
 st.title("🎓 BridgeAI — Academic to Industry Skill Gap Analyzer")
 st.write("Select your university curriculum and target role to generate an AI-powered skill gap analysis report.")
@@ -116,17 +108,3 @@ Generate a professional skill gap report including:
             st.markdown(response.text)
         except Exception as e:
             st.error(f"Error generating report: {str(e)}")
-```
-
-And your `requirements.txt` should just be:
-```
-streamlit
-google-generativeai>=0.8.0
-```
-
-**To deploy:**
-1. Save the code as `app.py` and push to GitHub along with `requirements.txt`
-2. Go to [streamlit.io/cloud](https://streamlit.io/cloud) → New app → select your repo
-3. In **Advanced settings → Secrets**, add:
-```
-GEMINI_API_KEY = "your_key_here"
