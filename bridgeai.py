@@ -1,5 +1,5 @@
 import os
-import streamlit as st
+import gradio as gr
 import google.generativeai as genai
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
@@ -73,20 +73,22 @@ Model deployment APIs
 
 model = genai.GenerativeModel("gemini-2.0-flash")
 
-st.set_page_config(page_title="BridgeAI", page_icon="🎓")
-st.title(" BridgeAI — Academic to Industry Skill Gap Analyzer")
-st.write("Select your university curriculum and target role to generate an AI-powered skill gap analysis report.")
-
-curriculum_choice = st.selectbox("University Curriculum", list(CURRICULUMS.keys()))
-role_choice = st.selectbox("Target Role", list(ROLES.keys()))
-
-if st.button("Generate Report"):
-    curriculum = CURRICULUMS[curriculum_choice]
+def analyze(curriculum_choice, role_choice, custom_input):
+    curriculum = custom_input.strip() if custom_input.strip() else CURRICULUMS[curriculum_choice]
     role = ROLES[role_choice]
 
     prompt = f"""
-You are an AI career advisor.
-Compare the following university curriculum with industry job requirements.
+You are an AI career advisor. Generate a detailed professional skill gap report.
+Format your response with clear sections using these exact headings:
+
+BRIDGEAI SKILL GAP REPORT — Role: {role_choice}
+
+SECTION 1 - ACADEMIC FOUNDATIONS
+SECTION 2 - STRENGTHS: DIRECT INDUSTRY MATCH
+SECTION 3 - SKILL GAPS
+SECTION 4 - READINESS SCORE
+SECTION 5 - 90-DAY IMPROVEMENT ROADMAP
+SECTION 6 - SUGGESTED PORTFOLIO PROJECTS
 
 ACADEMIC CURRICULUM:
 {curriculum}
@@ -94,20 +96,46 @@ ACADEMIC CURRICULUM:
 JOB REQUIREMENTS:
 {role}
 
-Generate a professional skill gap report including:
-1. Academic strengths
-2. Skills matching industry requirements
-3. Missing critical skills
-4. Readiness score out of 100
-5. 90-day improvement roadmap
-6. Suggested portfolio projects
+Be specific, practical, and actionable. For each skill gap, explain why it matters and how to learn it.
 """
     try:
         response = model.generate_content(prompt, stream=True)
-        output = st.empty()
         full_text = ""
         for chunk in response:
             full_text += chunk.text
-            output.markdown(full_text)
+            yield full_text
     except Exception as e:
-        st.error(f"Error generating report: {str(e)}")
+        yield f"Error generating report: {str(e)}"
+
+with gr.Blocks(theme=gr.themes.Default(primary_hue="orange"), css="""
+    #title { text-align: center; }
+    #subtitle { text-align: center; color: gray; }
+    #generate-btn { background-color: #e8500a; color: white; }
+""") as demo:
+
+    gr.Markdown("# BridgeAI — Academic to Industry Skill Gap Analyzer", elem_id="title")
+    gr.Markdown("Select your university curriculum and target role to receive a professional skill gap analysis and 90-day development plan.", elem_id="subtitle")
+
+    with gr.Row():
+        with gr.Column():
+            curriculum_choice = gr.Dropdown(list(CURRICULUMS.keys()), label="University Curriculum", value="CSE - KTU (Kerala)")
+            role_choice = gr.Dropdown(list(ROLES.keys()), label="Target Role", value="Data Analyst")
+            custom_input = gr.Textbox(
+                label="Don't see your university? Paste your subjects here (optional)",
+                placeholder="e.g. Java, Data Structures, DBMS, Computer Networks...",
+                lines=5
+            )
+            with gr.Row():
+                clear_btn = gr.ClearButton(value="Clear")
+                generate_btn = gr.Button("Generate Report", variant="primary", elem_id="generate-btn")
+
+        with gr.Column():
+            output = gr.Markdown(label="BridgeAI Skill Gap Report")
+
+    generate_btn.click(
+        fn=analyze,
+        inputs=[curriculum_choice, role_choice, custom_input],
+        outputs=output
+    )
+
+demo.launch()
